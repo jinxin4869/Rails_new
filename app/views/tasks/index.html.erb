@@ -1,16 +1,98 @@
 <p style="color: green"><%= notice %></p>
 
-<% content_for :title, "Tasks" %>
+<div class="bg-gray-100 min-h-screen">
+  <!-- ナビゲーションバー -->
+  <nav class="bg-white shadow-lg">
+    <div class="max-w-6xl mx-auto px-4">
+      <div class="flex justify-between">
+        <div class="flex space-x-7">
+          <div>
+            <!-- ロゴ -->
+            <a href="#" class="flex items-center py-4 px-2">
+              <span class="font-semibold text-gray-500 text-lg">Gourmet Explorer</span>
+            </a>
+          </div>
+        </div>
+        <!-- プライマリーナビ -->
+        <div class="hidden md:flex items-center space-x-1">
+          <a href="#" class="py-4 px-2 text-green-500 border-b-4 border-green-500 font-semibold">Home</a>
+          <a href="#" class="py-4 px-2 text-gray-500 font-semibold hover:text-green-500 transition duration-300">Menu</a>
+          <a href="#" class="py-4 px-2 text-gray-500 font-semibold hover:text-green-500 transition duration-300">About</a>
+          <a href="#" class="py-4 px-2 text-gray-500 font-semibold hover:text-green-500 transition duration-300">Contact</a>
+        </div>
+      </div>
+    </div>
+  </nav>
 
-<h1>Tasks</h1>
+  <!-- ヒーローセクション -->
+  <div class="py-20" style="background: linear-gradient(90deg, #667eea 0%, #764ba2 100%)">
+    <div class="container mx-auto px-6">
+      <h2 class="text-4xl font-bold mb-2 text-white">
+        Discover Amazing Cuisines
+      </h2>
+      <h3 class="text-2xl mb-8 text-gray-200">
+        Explore a world of flavors right at your fingertips
+      </h3>
+      <button class="bg-white font-bold rounded-full py-4 px-8 shadow-lg uppercase tracking-wider">
+        Order Now
+      </button>
+    </div>
+  </div>
 
-<div id="tasks">
-  <% @tasks.each do |task| %>
-    <%= render task %>
-    <p>
-      <%= link_to "Show this task", task %>
-    </p>
-  <% end %>
+  <!-- 特集料理セクション -->
+  <div class="container mx-auto px-6 py-20">
+    <h2 class="text-4xl font-bold text-center text-gray-800 mb-8">
+      Featured Dishes
+    </h2>
+    <div class="flex flex-wrap">
+      <div class="w-full md:w-1/3 px-2 mb-4">
+        <div class="bg-white rounded shadow py-2">
+          <%= image_tag 'sushi.jpg', alt: 'Sushi', class: 'w-full h-64 object-cover rounded-t' %>
+          <div class="p-4">
+            <h3 class="font-bold text-xl mb-2">Exquisite Sushi</h3>
+            <p class="text-gray-700">Fresh and delicious sushi made with the finest ingredients.</p>
+          </div>
+        </div>
+      </div>
+    <div class="w-full md:w-1/3 px-2 mb-4">
+      <div class="bg-white rounded shadow py-2">
+        <%= image_tag 'pasta.jpg', alt: 'Pasta', class: 'w-full h-64 object-cover rounded-t' %>
+        <div class="p-4">
+          <h3 class="font-bold text-xl mb-2">Authentic Italian Pasta</h3>
+          <p class="text-gray-700">Handmade pasta with rich, flavorful sauces.</p>
+        </div>
+      </div>
+    </div>
+      <div class="w-full md:w-1/3 px-2 mb-4">
+        <div class="bg-white rounded shadow py-2">
+          <%= image_tag 'steak.jpg', alt: 'Steak', class: 'w-full h-64 object-cover rounded-t' %>
+          <div class="p-4">
+            <h3 class="font-bold text-xl mb-2">Juicy Steak</h3>
+            <p class="text-gray-700">Premium cut steak grilled to perfection.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- フッター -->
+  <footer class="bg-gray-800 text-gray-300 py-8">
+    <div class="container mx-auto px-6">
+      <div class="flex flex-col md:flex-row justify-between items-center">
+        <div class="mb-4 md:mb-0">
+          <h4 class="text-lg font-bold">Gourmet Explorer</h4>
+          <p>Bringing the world's flavors to your table</p>
+        </div>
+        <div>
+          <a href="#" class="px-4 hover:text-white">Home</a>
+          <a href="#" class="px-4 hover:text-white">Menu</a>
+          <a href="#" class="px-4 hover:text-white">About</a>
+          <a href="#" class="px-4 hover:text-white">Contact</a>
+        </div>
+      </div>
+      <div class="mt-8 text-sm text-center">
+        &copy; 2023 Gourmet Explorer. All rights reserved.
+      </div>
+    </div>
+  </footer>
 </div>
-
-<%= link_to "New task", new_task_path %>
